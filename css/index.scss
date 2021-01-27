@@ -6,6 +6,18 @@ $played-fill-color: rgba(255, 255, 255, 1);
 $hover-fill-color: rgb(226, 211, 174);
 
 .d-progress-bar {
+  position: absolute;
+  .play-pause {
+    position: absolute;
+    left: -10%;
+    top: -17px;
+    z-index: 20;
+    color: white;
+
+    .action-btn {
+      font-size: 1.8rem;
+    }
+  }
 
   .progress-bar {
     position: relative;
@@ -18,7 +30,7 @@ $hover-fill-color: rgb(226, 211, 174);
       position: absolute;
       top: 0;
       background-color: $hover-fill-color;
-      transition: width linear .2s, opacity linear .1s;
+      transition: width linear .1s, opacity linear .1s;
     }
 
     .played-fill {
@@ -47,7 +59,6 @@ $hover-fill-color: rgb(226, 211, 174);
   }
 
   .timecode {
-    transition: .2s opacity .2s, left linear .05s;
     font-size: 12px;
     position: absolute;
     display: block;
@@ -83,7 +94,6 @@ $hover-fill-color: rgb(226, 211, 174);
 
       .box {
         cursor: default;
-        transition: .2s opacity .2s, left linear .05s;
         position: relative;
         background-color: #d49500;
         color: white;
@@ -101,7 +111,6 @@ $hover-fill-color: rgb(226, 211, 174);
       pointer-events: none;
       margin-left: -2.7em;
       z-index: 1;
-      transition: .3s opacity .2s, left linear .05s, top linear .05s;
       font-size: 12px;
 
       .box {
