@@ -15,7 +15,10 @@ $hover-fill-color: rgb(226, 211, 174);
     color: white;
 
     .action-btn {
-      font-size: 1.8rem;
+      .icon{
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
   }
 
