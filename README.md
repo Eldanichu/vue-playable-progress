@@ -1,6 +1,11 @@
 # vue-playable-progress
 ##version:0.11
 ```
+example:
+    import VueProgress from 'VueProgress'
+    Vue.use(VueProgress)
+```
+```
 events:
     bClick:{index:Number}
     bStopped:{state:Boolean | index:Number}
