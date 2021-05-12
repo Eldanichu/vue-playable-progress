@@ -2,7 +2,9 @@
 ##version:0.11
 ```
 example:
-    import VueProgress from 'VueProgress'
+    npm i @eldanorg/vue-progress
+    
+    import VueProgress from '@eldanorg/vue-progress'
     Vue.use(VueProgress)
 ```
 ```
