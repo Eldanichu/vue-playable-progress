@@ -5,20 +5,20 @@ $progress-bar-color: #8d8d8d;
 $played-fill-color: rgba(255, 255, 255, 1);
 $hover-fill-color: rgb(226, 211, 174);
 
-.d-progress-bar {
-  position: absolute;
-  .play-pause {
-    position: absolute;
-    left: -10%;
-    top: -17px;
-    z-index: 20;
-    color: white;
+$icon-color: #ffffff;
+$icon-bg-color: #0096db;
 
+.d-progress-bar.v1 {
+  position: absolute;
+
+  .play-pause {
+    @apply absolute mx-2 -top-2 right-full;
     .action-btn {
-      .icon{
-        width: 2.5rem;
-        height: 2.5rem;
-      }
+      @apply rounded-full px-2 py-1 text-center;
+      font-size: 14px;
+      line-height: 1.2rem;
+      background-color: $icon-bg-color;
+      color: $icon-color;
     }
   }
 
@@ -27,6 +27,7 @@ $hover-fill-color: rgb(226, 211, 174);
     height: 8px;
     background-color: $progress-bar-color;
     border-radius: 3px;
+    transition: all ease-in-out .25s;
 
     .hover-fill {
       @extend .progress-bar;
@@ -66,7 +67,7 @@ $hover-fill-color: rgb(226, 211, 174);
     position: absolute;
     display: block;
     box-sizing: border-box;
-    top: -2.4em;
+    top: -2.6em;
 
 
     .box {
@@ -93,7 +94,7 @@ $hover-fill-color: rgb(226, 211, 174);
 
     &.main-timecode {
       font-size: 12px;
-      margin-left: -2.7em;
+      margin-left: -2.3em;
 
       .box {
         cursor: default;

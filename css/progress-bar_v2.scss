@@ -1,0 +1,162 @@
+$tag-text-color: white;
+$tag-border-color: white;
+
+$progress-bar-color: #FFFFFF;
+$played-fill-color: #409EFF;
+$hover-fill-color: #CCE6FF;
+
+$icon-color: white;
+$icon-bg-color: #409EFF;
+
+$tip-bg: #CCE6FF;
+$tip-text-color: black;
+$tip-hover-bg: #484848F0;
+$tip-hover-text-color: white;
+$tip-shadow: 0 0 4px 0 rgba(68, 65, 65, 0.84);
+
+.d-progress-bar.v2 {
+  position: absolute;
+  z-index: 90;
+
+  .warp {
+    @apply bg-gradient-to-t from-gray-900 to-gray-700 rounded-full h-8 flex flex-row items-center px-2;
+  }
+
+  .play-pause {
+    .action-btn {
+      @apply rounded-full text-center;
+      height: 1.5rem;
+      width: 1.5rem;
+      line-height: 1.5rem;
+      font-size: 12px;
+      background-color: $icon-bg-color;
+      color: $icon-color;
+    }
+  }
+
+  .loop {
+    .btn-loop {
+      height: 1.5rem;
+      width: 1.5rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .progress-bar {
+    @apply inline-block relative h-1 rounded-full w-full ml-3 mr-2;
+    background-color: $progress-bar-color;
+
+    .played-fill {
+      @apply absolute h-1;
+      background-color: $played-fill-color;
+
+      .played-point {
+        @apply absolute left-full top-1/2 transform-gpu -translate-y-1/2 -translate-x-1/2 h-3 w-3;
+        @apply rounded-full border-2 border-gray-200 bg-blue-500 hover:bg-blue-400;
+      }
+    }
+
+    .hover-fill {
+      @apply absolute h-1 transition-colors duration-200 ease-in-out;
+      background-color: $hover-fill-color;
+    }
+  }
+
+  .timecode {
+    font-size: 12px;
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    top: -1.7em;
+    margin-left: .4em;
+
+
+    .box {
+      height: 1.8em;
+      box-sizing: border-box;
+      padding: .1em .8em;
+      white-space: nowrap;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      border-radius: .5em;
+
+      &::before {
+        cursor: default;
+        top: 100%;
+        left: 2.2em;
+        content: ' ';
+        height: 0;
+        width: 0;
+        position: absolute;
+        border: .5em solid transparent;
+      }
+    }
+
+    &.main-timecode {
+      font-size: 14px;
+
+      .box {
+        cursor: default;
+        position: relative;
+        background-color: $tip-bg;
+        color: $tip-text-color;
+        box-shadow: $tip-shadow;
+
+        &::before {
+          border-top-color: $tip-bg;
+        }
+      }
+    }
+
+    &.ghost-timecode {
+      display: inline-block;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 1;
+      font-size: 14px;
+
+      .box {
+        box-shadow: none;
+        cursor: pointer;
+        color: $tip-hover-text-color;
+        background-color: $tip-hover-bg;
+
+        &::before {
+          border-top-color: $tip-hover-bg;
+        }
+      }
+    }
+
+    .box-details {
+      transition: .3s opacity .2s, left linear .3s;
+      display: block;
+      min-height: 20px;
+      min-width: 110px;
+      border-radius: .5em;
+      position: absolute;
+      bottom: 100%;
+      margin-bottom: 5px;
+      padding: .1em .8em;
+
+      &.light {
+        color: black;
+        background-color: rgba(255, 255, 255, 0.85);
+      }
+
+      &.dark {
+        color: white;
+      }
+    }
+  }
+
+  .time-code-blocked {
+    @apply text-white text-center whitespace-nowrap;
+
+    .time {
+      @apply bg-blue-500 rounded-full px-1;
+      font-size: 14px;
+      line-height: 2;
+    }
+  }
+}
