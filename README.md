@@ -1,37 +1,21 @@
 # vue-playable-progress
-##version:0.11
-```
-example:
-    npm i @eldanorg/vue-progress
-    
-    import VueProgress from '@eldanorg/vue-progress'
-    Vue.use(VueProgress)
-```
-```
-events:
-    bClick:{index:Number}
-    bStopped:{state:Boolean | index:Number}
-    bPlaying:{state:Boolean | index:Number}
-```
+##version:0.2
 ```
 props:
-    //dom Element id
+  // theme
+  v: {
+      type: String,
+      default: 'v2'
+    },
+    // dom id
     id: {
       type: String,
       default: "$$progress",
     },
-    data: {
-      type: Array,
-      default: () => {
-        return [];
-      },
-    },
-    //it can pass with like (40%) or Number(300)
     width: {
       type: [Number, String],
-      default: 485,
+      default: '30',
     },
-    //top-left | top-right | bottom-left | bottom-right
     position: {
       type: String,
       default: 'bottom-left'
@@ -39,22 +23,22 @@ props:
     offset: {
       type: Array,
       default: () => {
-        return [600, 40]
+        return [0, 20];
       }
     },
     draws: {
       type: Object,
       default: () => {
-        return {}
+        return {};
       }
     },
     bInterval: {
       type: [String, Number],
       default: 300
     },
-    tags: {
+    loop: {
       type: Boolean,
-      default: false
+      default: true
     },
     hoverTip: {
       type: Boolean,
@@ -63,5 +47,15 @@ props:
     Tip: {
       type: Boolean,
       default: true
+    },
+    data: {
+      type: Array,
+      default: () => {
+        return [];
+      },
+    },
+    value: {
+      type: [String, Number],
+      default: 0
     }
 ```
